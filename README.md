@@ -98,7 +98,7 @@ https://github.com/wiedehopf/adsb-wiki/wiki/RTL-Bias-Tee
 
 ## Global map of aircraft
 
-One of this forks main uses is to be the backend for the global map at https://adsbexchange.com/
+One of this forks main uses is to be the backend for the global map at https://adsb.com/
 For that purpose it's used in conjunction with tar1090 with some extra options to cope with the number of aircraft and also record a history of flight paths: https://github.com/wiedehopf/tar1090#0800-destroy-sd-card
 
 ## --debug=S: speed check debugging output

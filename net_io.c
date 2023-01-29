@@ -335,15 +335,15 @@ static struct client *createSocketClient(struct net_service *service, int fd) {
 
 static int sendUUID(struct client *c, int64_t now) {
     struct net_connector *con = c->con;
-    // sending UUID if hostname matches adsbexchange
+    // sending UUID if hostname matches adsb
     char uuid[130];
     uuid[0] = '\0';
     if ((c->sendq && c->sendq_len + 256 < c->sendq_max)
-            && ( (strstr(con->address, "feed") && strstr(con->address, ".adsbexchange.com")) || Modes.debug_ping || Modes.debug_send_uuid)) {
+            && ( (strstr(con->address, "feed") && strstr(con->address, ".adsb.com")) || Modes.debug_ping || Modes.debug_send_uuid)) {
         int fd = open(Modes.uuidFile, O_RDONLY);
-        // try legacy / adsbexchange image path as hardcoded fallback
+        // try legacy / adsb image path as hardcoded fallback
         if (fd == -1) {
-            fd = open("/boot/adsbx-uuid", O_RDONLY);
+            fd = open("/boot/adsb-uuid", O_RDONLY);
         }
         int res = -1;
         if (fd != -1) {
